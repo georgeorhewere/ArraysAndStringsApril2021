@@ -9,10 +9,12 @@ namespace ArraysAndStringsApril2021.Sorting
     public class QuickSortMidPivot
     {
         private int[] quickSortArray;
+        private int swapCount;
 
         public QuickSortMidPivot(int [] numberList)
         {
             quickSortArray = numberList;
+            swapCount = 0;
         }
 
         public void sort()
@@ -20,6 +22,9 @@ namespace ArraysAndStringsApril2021.Sorting
             Console.WriteLine($"Initial array state");
             printArrayForTest(quickSortArray);
             quickSortUtility(quickSortArray, 0, quickSortArray.Length - 1);
+            Console.WriteLine($"");
+            Console.WriteLine($"Final array state- number of swaps {swapCount} ");
+            printArrayForTest(quickSortArray);
         }
 
 
@@ -36,7 +41,7 @@ namespace ArraysAndStringsApril2021.Sorting
             int pivot = arr[mid];
             int start = lower;
             int stop = upper;
-            Console.WriteLine($"Mid Point {mid} Pivot {pivot}");
+            // Console.WriteLine($"Mid Point {mid} Pivot {pivot}");
             
             
             while(lower < upper)
@@ -56,23 +61,31 @@ namespace ArraysAndStringsApril2021.Sorting
                 if (lower < upper)
                 {
                     swap(arr, upper, lower);
+                    swapCount++;
                 }
 
             }
-            Console.WriteLine($"After ordering by the pivot");
-            printArrayForTest(arr);
+            //Console.WriteLine($"After ordering by the pivot");
+            //printArrayForTest(arr);
 
-            Console.WriteLine($"After Swap with upper : {upper} start :{ start}");
-            swap(arr, upper, start); //upper is the pivot position
+            //Console.WriteLine($"After Swap with upper : {upper} start :{ start}");
+            if (arr[upper] < arr[start])
+            {
+                swap(arr, upper, start); //upper is the pivot position
+                swapCount++;
+            }
            
-            printArrayForTest(arr);
-            
-            
+            //printArrayForTest(arr);
+
+            // call recursive function for left and right arrays
+            quickSortUtility(arr, start, upper - 1); //pivot -1 is the upper for left sub array.
+            quickSortUtility(arr, upper + 1, stop); // pivot + 1 is the lower for right sub array.
 
         }
 
         private void swap(int[] arr, int first, int second)
         {
+
             int temp = arr[first];
             arr[first] = arr[second];
             arr[second] = temp;
