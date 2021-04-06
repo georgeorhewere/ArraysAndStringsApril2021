@@ -18,6 +18,10 @@ namespace ArraysAndStringsApril2021
             QuickSortMidPivot manager = new QuickSortMidPivot(numbers);
             manager.sort();
 
+            numbers = new int[] { 4,3,1,2};
+            manager = new QuickSortMidPivot(numbers);
+            manager.sort();
+
 
         }
     }
