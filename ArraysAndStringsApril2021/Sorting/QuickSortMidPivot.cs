@@ -11,14 +11,16 @@ namespace ArraysAndStringsApril2021.Sorting
         private int[] quickSortArray;
         private int swapCount;
 
-        public QuickSortMidPivot(int [] numberList)
+        public QuickSortMidPivot()
+        {
+            
+        }
+
+        public void sort(int[] numberList)
         {
             quickSortArray = numberList;
             swapCount = 0;
-        }
 
-        public void sort()
-        {
             Console.WriteLine($"Initial array state");
             printArrayForTest(quickSortArray);
             quickSortUtility(quickSortArray, 0, quickSortArray.Length - 1);

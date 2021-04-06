@@ -15,12 +15,11 @@ namespace ArraysAndStringsApril2021
         static void testQuickSortMidPivot()
         {
             int[] numbers = new int[] {7,1,3,2,4, 5,6 };
-            QuickSortMidPivot manager = new QuickSortMidPivot(numbers);
-            manager.sort();
+            QuickSortMidPivot manager = new QuickSortMidPivot();
+            manager.sort(numbers);
 
-            numbers = new int[] { 4,3,1,2};
-            manager = new QuickSortMidPivot(numbers);
-            manager.sort();
+            numbers = new int[] { 4,3,1,2};            
+            manager.sort(numbers);
 
 
         }
