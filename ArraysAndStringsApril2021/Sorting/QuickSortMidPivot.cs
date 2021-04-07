@@ -50,12 +50,12 @@ namespace ArraysAndStringsApril2021.Sorting
             {
                 // copy items less than the pivot to the left
                 // copy items greater than the pivot to the right
-                while (arr[lower].CompareTo(pivot) < 0)
+                while (arr[lower] < pivot)
                 {
                     lower++;
                 }
 
-                while (arr[upper].CompareTo(pivot) > 0 )
+                while (arr[upper] > pivot)
                 {
                     upper--;
                 }
