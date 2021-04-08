@@ -18,14 +18,17 @@ namespace ArraysAndStringsApril2021
             QuickSortMidPivot manager = new QuickSortMidPivot();
             manager.sort(numbers);
 
-            numbers = new int[] { 4,3,1,2};            
-            manager.sort(numbers);
+            //numbers = new int[] { 4,3,1,2};            
+            //manager.sort(numbers);
 
-            numbers = new int[] { 2,3,4,1,5 };
-            manager.sort(numbers);
+            //numbers = new int[] { 2,3,4,1,5 };
+            //manager.sort(numbers);
             
 
-            numbers = new int[] { 1, 3, 5, 2, 4, 6, 7 };
+            //numbers = new int[] { 1, 3, 5, 2, 4, 6, 7 };
+            //manager.sort(numbers);
+            /// 3 7 6 9 1 8 10 4 2 5 result is 9
+            numbers = new int[] { 3, 7, 6, 9, 1, 8, 10, 4, 2, 5 };
             manager.sort(numbers);
 
 
