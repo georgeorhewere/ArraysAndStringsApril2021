@@ -8,7 +8,11 @@ namespace ArraysAndStringsApril2021
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            testQuickSortMidPivot();
+            // testQuickSortMidPivot();
+            int testFactorial = 15;
+            int finalFactorialValue = factorial(testFactorial);
+            Console.WriteLine($" Factorial {testFactorial} is { finalFactorialValue }");
+
         }
 
 
@@ -33,5 +37,19 @@ namespace ArraysAndStringsApril2021
 
 
         }
+
+
+        static int factorial(int num)
+        {
+            Console.WriteLine($"factorial {num}");
+            //termination condition
+            if(num <= 1)
+            {
+                return 1;
+            }
+            //call self and move towards termination
+            return num * factorial(num - 1);
+        }
+
     }
 }
