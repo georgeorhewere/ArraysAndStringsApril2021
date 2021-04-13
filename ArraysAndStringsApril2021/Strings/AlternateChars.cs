@@ -24,15 +24,19 @@ namespace ArraysAndStringsApril2021
             else
             {
                 Console.WriteLine("process string");
-                StringBuilder builder = new StringBuilder(s.Length);
+                // StringBuilder builder = new StringBuilder(s.Length);
                 // BruteForceCharCheck(s, builder);
                 //TakeWhileCharCheck(s, builder);
-                WhileLoopCharCheck(s, distinctCharGroups, builder);
-
+                //WhileLoopCharCheck(s, distinctCharGroups, builder);
+                for (int c = 1; c< s.Length;c++)
+                {
+                    if (s[c - 1] == s[c])
+                        minimumDeletions++;                    
+                }
 
 
                 // get difference in length to identify minimum deletions
-                minimumDeletions = s.Length - builder.Length;
+                // minimumDeletions = s.Length - builder.Length;
             }
 
             Console.WriteLine($"The minimum deletions for {s} is {minimumDeletions}");
