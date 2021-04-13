@@ -24,6 +24,22 @@ namespace ArraysAndStringsApril2021
             else
             {
                 Console.WriteLine("process string");
+                StringBuilder builder = new StringBuilder(s.Length);
+                foreach(var c in s)
+                {
+                    if (builder.Length == 0)
+                        builder.Append(c);
+                    else
+                    {
+                        // get dast char in builder
+                        var lastCharInBuilder = builder.ToString().Last();
+                        if (!c.Equals(lastCharInBuilder))
+                            builder.Append(c);
+                    }
+                }
+
+                // get difference in length to identify minimum deletions
+                minimumDeletions = s.Length - builder.Length;
             }
 
             Console.WriteLine($"The minimum deletions for {s} is {minimumDeletions}");
