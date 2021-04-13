@@ -46,10 +46,14 @@ namespace ArraysAndStringsApril2021
         static void TestAlternateChars()
         {
             string input = $"AAAAA";
-            int deletions = AlternateChars.alternatingCharacters(input);
+           // int deletions = AlternateChars.alternatingCharacters(input);
 
             input = $"ABABABAB";
-            deletions = AlternateChars.alternatingCharacters(input);
+            //deletions = AlternateChars.alternatingCharacters(input);
+
+            input = $"AAABBB";
+            int deletions = AlternateChars.alternatingCharacters(input);
+            
 
         }
 

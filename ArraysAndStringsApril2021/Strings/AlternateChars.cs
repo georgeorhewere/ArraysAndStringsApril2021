@@ -25,18 +25,29 @@ namespace ArraysAndStringsApril2021
             {
                 Console.WriteLine("process string");
                 StringBuilder builder = new StringBuilder(s.Length);
-                foreach(var c in s)
+                // BruteForceCharCheck(s, builder);
+                int index = 0;
+                int skip = 0;
+
+                while (index < s.Length)
                 {
-                    if (builder.Length == 0)
-                        builder.Append(c);
-                    else
+                    var DistinctChars = s.Skip(skip).TakeWhile(x =>
                     {
-                        // get dast char in builder
-                        var lastCharInBuilder = builder.ToString().Last();
-                        if (!c.Equals(lastCharInBuilder))
-                            builder.Append(c);
-                    }
+                        bool retVal;
+                        retVal = index == 0 || (index > 0 && builder.ToString().Last() != x);
+                        Console.WriteLine($"index {index} x { x } retVal {retVal} ");
+                        if (retVal)
+                            builder.Append(x);
+                        index++;
+                        skip = index;
+                        return retVal;
+                    }).ToList();
+
+                    var t =  new String(DistinctChars.ToArray());
                 }
+                //builder = new StringBuilder(new String(DistinctChars.ToArray()));
+
+
 
                 // get difference in length to identify minimum deletions
                 minimumDeletions = s.Length - builder.Length;
@@ -44,6 +55,22 @@ namespace ArraysAndStringsApril2021
 
             Console.WriteLine($"The minimum deletions for {s} is {minimumDeletions}");
             return minimumDeletions;
+        }
+
+        private static void BruteForceCharCheck(string s, StringBuilder builder)
+        {
+            foreach (var c in s)
+            {
+                if (builder.Length == 0)
+                    builder.Append(c);
+                else
+                {
+                    // get dast char in builder
+                    var lastCharInBuilder = builder.ToString().Last();
+                    if (!c.Equals(lastCharInBuilder))
+                        builder.Append(c);
+                }
+            }
         }
     }
 }
