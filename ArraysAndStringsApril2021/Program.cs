@@ -9,12 +9,17 @@ namespace ArraysAndStringsApril2021
         {
             Console.WriteLine("Hello World!");
             // testQuickSortMidPivot();
-            int testFactorial = 15;
-            int finalFactorialValue = factorial(testFactorial);
-            Console.WriteLine($" Factorial {testFactorial} is { finalFactorialValue }");
+            //testFactorialAlg();
+            TestAlternateChars();
 
         }
 
+        private static void testFactorialAlg()
+        {
+            int testFactorial = 15;
+            int finalFactorialValue = factorial(testFactorial);
+            Console.WriteLine($" Factorial {testFactorial} is { finalFactorialValue }");
+        }
 
         static void testQuickSortMidPivot()
         {
@@ -36,6 +41,13 @@ namespace ArraysAndStringsApril2021
             manager.sort(numbers);
 
 
+        }
+
+        static void TestAlternateChars()
+        {
+            string input = $"AAAAA";
+            int deletions = AlternateChars.alternatingCharacters(input);
+            
         }
 
 
