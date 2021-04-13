@@ -47,7 +47,10 @@ namespace ArraysAndStringsApril2021
         {
             string input = $"AAAAA";
             int deletions = AlternateChars.alternatingCharacters(input);
-            
+
+            input = $"ABABABAB";
+            deletions = AlternateChars.alternatingCharacters(input);
+
         }
 
 
