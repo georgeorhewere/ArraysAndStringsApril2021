@@ -63,7 +63,7 @@ namespace ArraysAndStringsApril2021
             string test1 = "cde";
             string test2 = "dcf";
             AnagramMaker.makeAnagram(test1, test2);
-            test1 = "cde";
+            test1 = "cdec";
             test2 = "abc";
             AnagramMaker.makeAnagram(test1, test2);
 

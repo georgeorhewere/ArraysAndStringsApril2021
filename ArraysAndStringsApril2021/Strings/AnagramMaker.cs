@@ -20,6 +20,8 @@ namespace ArraysAndStringsApril2021
             {
                 if (b.Contains(a[x]))
                 {
+                    int instanceIndex = b.IndexOf(a[x]);
+                    b = b.Remove(instanceIndex, 1);
                     firstWordLength--;
                     secondWordLength--;
                 }
