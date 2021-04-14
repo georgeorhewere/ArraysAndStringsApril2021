@@ -7,10 +7,11 @@ namespace ArraysAndStringsApril2021
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Algorithm Practice - Strings");
             // testQuickSortMidPivot();
             //testFactorialAlg();
-            TestAlternateChars();
+            // TestAlternateChars();
+            TestAnagramMaker();
 
         }
 
@@ -57,6 +58,13 @@ namespace ArraysAndStringsApril2021
 
         }
 
+        static void TestAnagramMaker()
+        {
+            string test1 = "";
+            string test2 = "";
+            int minDeletions = AnagramMaker.makeAnagram(test1, test2);
+            Console.WriteLine($"Minimum deletions { minDeletions } from {test1} and {test2} ");
+        }
 
         static int factorial(int num)
         {
