@@ -60,10 +60,13 @@ namespace ArraysAndStringsApril2021
 
         static void TestAnagramMaker()
         {
-            string test1 = "";
-            string test2 = "";
-            int minDeletions = AnagramMaker.makeAnagram(test1, test2);
-            Console.WriteLine($"Minimum deletions { minDeletions } from {test1} and {test2} ");
+            string test1 = "cde";
+            string test2 = "dcf";
+            AnagramMaker.makeAnagram(test1, test2);
+            test1 = "cde";
+            test2 = "abc";
+            AnagramMaker.makeAnagram(test1, test2);
+
         }
 
         static int factorial(int num)
