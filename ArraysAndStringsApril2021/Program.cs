@@ -11,10 +11,16 @@ namespace ArraysAndStringsApril2021
             // testQuickSortMidPivot();
             //testFactorialAlg();
             // TestAlternateChars();
-            TestAnagramMaker();
+            //TestAnagramMaker();
+            testSpecialStrings();
 
         }
 
+        static void testSpecialStrings()
+        {
+            long result = SpecialStrings.substrCount(7, "abcbaba");
+            Console.WriteLine($"number of special strings is { result }");
+        }
         private static void testFactorialAlg()
         {
             int testFactorial = 15;
