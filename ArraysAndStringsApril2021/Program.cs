@@ -18,6 +18,7 @@ namespace ArraysAndStringsApril2021
 
         static void testSpecialStrings()
         {
+            // abcbaba
             long result = SpecialStrings.substrCount(7, "abcbaba");
             Console.WriteLine($"number of special strings is { result }");
         }

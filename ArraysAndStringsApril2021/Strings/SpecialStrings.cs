@@ -20,18 +20,16 @@ namespace ArraysAndStringsApril2021
             for(int x =0; x < n; x++)
             {
                 //add current char
-                subStringPerms.Add(s[x].ToString());
+                //subStringPerms.Add(s[x].ToString());
                 //get permutations
-                if(x > 0)
-                {
-                    int numOfChars = x + 1;
-                    for(int r = 0; r < x; r++)
+                int count = x + 1;
+                    for(int r = 0; r < x + 1; r++)
                     {
-                        string substring = s.Substring(r,numOfChars);                        
+                        string substring = s.Substring(r,count);                        
                         subStringPerms.Add(substring);             
-                        numOfChars--;
+                        count--;
                     }
-                }
+                
             }
 
             int numOfSpecialSubstrings = 0;
