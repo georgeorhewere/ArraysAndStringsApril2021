@@ -33,25 +33,26 @@ namespace ArraysAndStringsApril2021
             }
 
             int numOfSpecialSubstrings = 0;
-
+            Console.WriteLine($"number of permutations - {subStringPerms.Count()}");
             foreach (string d in subStringPerms)
             {
-                Console.WriteLine(d);
-                //if (d.All(f => f == d.First()))
-                //{
-                //    Console.WriteLine(d);
-                //    numOfSpecialSubstrings++;
-                //}
 
-                //int midpoint = d.Length / 2;
-                //if (d.Length > 2)
-                //{
-                //    Console.WriteLine($"midpoint of { d } is { midpoint } value- {d[midpoint]} left {d.Substring(0, midpoint)} right - {d.Substring(midpoint + 1)} ");
-                //    if (d.Substring(0, midpoint).Equals(d.Substring(midpoint +1)))
-                //    {
-                //        numOfSpecialSubstrings++;
-                //    }
-                //}
+                
+                if (d.All(f => f == d.First()))
+                {
+                    Console.WriteLine(d);
+                    numOfSpecialSubstrings++;
+                }
+
+                int midpoint = d.Length / 2;
+                if (d.Length > 2)
+                {
+                    Console.WriteLine($"midpoint of { d } is { midpoint } value- {d[midpoint]} left {d.Substring(0, midpoint)} right - {d.Substring(midpoint + 1)} ");
+                    if (d.Substring(0, midpoint).Equals(d.Substring(midpoint +1)))
+                    {
+                        numOfSpecialSubstrings++;
+                    }
+                }
             }
                 
 
