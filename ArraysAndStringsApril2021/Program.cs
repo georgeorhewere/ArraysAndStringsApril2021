@@ -1,10 +1,13 @@
 ﻿using ArraysAndStringsApril2021.Sorting;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ArraysAndStringsApril2021
 {
     class Program
     {
+        const string inputFileBase = @"F:\Training\Algorithms\Hackerrank\";
         static void Main(string[] args)
         {
             Console.WriteLine("Algorithm Practice - Strings");
@@ -19,7 +22,11 @@ namespace ArraysAndStringsApril2021
         static void testSpecialStrings()
         {
             // abcbaba
-            long result = SpecialStrings.substrCount(7, "abcbaba");
+            List<string> fileInput = readInput("specialStringerro.txt");
+            int testSize = 10;
+            string testValue = string.Join("",fileInput[1].Take(10));
+            
+            long result = SpecialStrings.substrCount(testSize, testValue);
             Console.WriteLine($"number of special strings is { result }");
         }
         private static void testFactorialAlg()
@@ -86,6 +93,16 @@ namespace ArraysAndStringsApril2021
             }
             //call self and move towards termination
             return num * factorial(num - 1);
+        }
+
+        static List<string> readInput(string fileName)
+        {
+            string _file = String.Format("{0}{1}", inputFileBase, fileName);
+            IEnumerable<string> text = System.IO.File.ReadLines(_file);
+            List<string> input = new List<string>(text);
+            return input;
+            
+            
         }
 
     }
