@@ -25,6 +25,8 @@ namespace ArraysAndStringsApril2021
         {
             int[] rideQueue = new int[] { 2, 1, 5, 3, 4 };            
             NewYearMix.minimumBribes(rideQueue);
+            rideQueue = new int[] { 2, 5, 1, 3, 4 };
+            NewYearMix.minimumBribes(rideQueue);
 
         }
         static void testSpecialStrings()
