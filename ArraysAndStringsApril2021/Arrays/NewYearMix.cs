@@ -15,14 +15,14 @@ namespace ArraysAndStringsApril2021
         public static void minimumBribes(int[] q)
         {
             //q.ToList().ForEach(Console.WriteLine);
-            Console.WriteLine("Manage Array");
+           // Console.WriteLine("Manage Array");
             int size = q.Length;
             int minimumBribes = 0;
             bool isChaotic = false;
             for(int x = 0; x < size; x++)
             {
                 int positionDifference = q[x] - (x + 1);
-                Console.WriteLine($"Difference: { positionDifference }");
+             //   Console.WriteLine($"Difference: { positionDifference }");
                 if(positionDifference > 2)
                 {
                     isChaotic = true;                    
