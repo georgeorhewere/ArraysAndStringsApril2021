@@ -22,6 +22,7 @@ namespace ArraysAndStringsApril2021
             for(int x = 0; x < size; x++)
             {
                 int positionDifference = q[x] - (x + 1);
+                Console.WriteLine($"Difference: { positionDifference }");
                 if(positionDifference > 2)
                 {
                     isChaotic = true;                    
@@ -32,6 +33,10 @@ namespace ArraysAndStringsApril2021
                     if(positionDifference > 0 && positionDifference <= 2)
                     {
                         minimumBribes += positionDifference;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Consider if { positionDifference } position difference was an initial bribe");
                     }
                 }
             }
