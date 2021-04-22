@@ -21,11 +21,12 @@ namespace ArraysAndStringsApril2021
 
         static void testSpecialStrings()
         {
-            // abcbaba
+            // abcbaba 10 aaaa - 10
             List<string> fileInput = readInput("specialStringerro.txt");
-            int testSize = 10;
-            string testValue = string.Join("",fileInput[1].Take(10));
-            
+            int testSize = 4;
+            string testValue = "aaaa"; //string.Join("",fileInput[1].Take(50));
+
+
             long result = SpecialStrings.substrCount(testSize, testValue);
             Console.WriteLine($"number of special strings is { result }");
         }

@@ -22,32 +22,48 @@ namespace ArraysAndStringsApril2021
             List<string> subStringPerms = new List<string>();
             timer.Start();
             int numOfSpecialSubstrings = 0;
-            for (int x = 0; x < n; x++)
+
+            if(s.All(c=> c == s.First()))
             {
-                //add current char
-                //subStringPerms.Add(s[x].ToString());
-                //get permutations
-                int count = x + 1;
-                for (int r = 0; r < x + 1; r++)
+                numOfSpecialSubstrings = Enumerable.Range(1, n).Sum();                
+            }
+            else
+            {
+                for (int x = 0; x < n; x++)
                 {
-                    string substring = s.Substring(r, count);
+                    int count = x + 1;
+                    string substring = s.Substring(0, count);                    
+                    //get permutations
                     if (substring.All(f => f == substring.First()))
-                    {            
-                        numOfSpecialSubstrings++;
-                    }
-                    else if (substring.Length > 2)
                     {
-                        int midpoint = substring.Length / 2;
-                        //Console.WriteLine($"midpoint of { d } is { midpoint } value- {d[midpoint]} left {d.Substring(0, midpoint)} right - {d.Substring(midpoint + 1)} ");
-                        if (substring.Substring(0, midpoint).Equals(substring.Substring(midpoint + 1)))
+                        int wordLength = substring.Length;
+                        numOfSpecialSubstrings = Enumerable.Range(1, wordLength).Sum();
+                    }
+                    else
+                    {
+                       
+                        for (int r = 0; r < x + 1; r++)
                         {
-                            numOfSpecialSubstrings++;
+                            string wordPerm = s.Substring(r, count);
+                            if (wordPerm.Length % 2 == 1)
+                            {
+                                int midpoint = wordPerm.Length / 2;
+                                if (wordPerm.Substring(0, midpoint).Equals(wordPerm.Substring(midpoint + 1)))
+                                {
+                                    numOfSpecialSubstrings++;
+                                }
+                            }
+                            count--;
                         }
-                    }                    
-                    count--;
+                    }
                 }
 
             }
+
+
+
+
+            
 
 
             timer.Stop();
