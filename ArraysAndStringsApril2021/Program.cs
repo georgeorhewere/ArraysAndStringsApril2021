@@ -24,13 +24,15 @@ namespace ArraysAndStringsApril2021
         static void testNewYearMix()
         {
             int[] rideQueue = new int[] { 2, 1, 5, 3, 4 };            
-            NewYearMix.minimumBribes(rideQueue);
-            rideQueue = new int[] { 2, 5, 1, 3, 4 };
-            NewYearMix.minimumBribes(rideQueue);
+            NewYearMix.minimumBribes2(rideQueue);
+            Console.WriteLine();
+            //rideQueue = new int[] { 2, 5, 1, 3, 4 };
+            //NewYearMix.minimumBribes(rideQueue);
 
             // failing test case expected 7
             rideQueue = new int[] { 1, 2, 5, 3, 7, 8, 6, 4 };
-            NewYearMix.minimumBribes(rideQueue);
+            NewYearMix.minimumBribesReverseSort(rideQueue);
+
 
         }
         static void testSpecialStrings()

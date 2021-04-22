@@ -15,22 +15,22 @@ namespace ArraysAndStringsApril2021
         public static void minimumBribes(int[] q)
         {
             //q.ToList().ForEach(Console.WriteLine);
-           // Console.WriteLine("Manage Array");
+            // Console.WriteLine("Manage Array");
             int size = q.Length;
             int minimumBribes = 0;
             bool isChaotic = false;
-            for(int x = 0; x < size; x++)
+            for (int x = 0; x < size; x++)
             {
                 int positionDifference = q[x] - (x + 1);
-             //   Console.WriteLine($"Difference: { positionDifference }");
-                if(positionDifference > 2)
+                //   Console.WriteLine($"Difference: { positionDifference }");
+                if (positionDifference > 2)
                 {
-                    isChaotic = true;                    
+                    isChaotic = true;
                     break;
                 }
                 else
                 {
-                    if(positionDifference >= 0 && positionDifference <= 2)
+                    if (positionDifference >= 0 && positionDifference <= 2)
                     {
                         minimumBribes += positionDifference;
                     }
@@ -41,13 +41,87 @@ namespace ArraysAndStringsApril2021
                 }
             }
 
-            if(isChaotic)
+            if (isChaotic)
                 Console.WriteLine("Too Chaotic");
             else
                 Console.WriteLine($"Minimum Bribes { minimumBribes }");
 
 
 
+        }
+
+        public static void minimumBribes2(int[] q)
+        {
+            int[] changedRides = q.Where(x => x != q[x-1
+                ]).ToArray();
+            int numOfChanged = 0;
+            foreach(int t in changedRides)
+            {
+                int diff = t - q[t - 1];
+
+                if(diff > 0)                
+                    numOfChanged += diff;
+            }
+            Console.WriteLine($"Minimum Bribes {numOfChanged}");
+
+        }
+
+        //write quick sort to 
+        public static void minimumBribesReverseSort(int[] q)
+        {
+            int lower = 0;
+            int upper = q.Length - 1;
+
+            quickSortUtil(q, lower, upper);
+            q.ToList().ForEach(c => { Console.Write($" {c}");  });
+            Console.WriteLine();
+            //Console.WriteLine($"Bribes {res}");
+        }
+
+        private static void quickSortUtil(int [] d, int lower, int upper)
+        {
+            if (lower >= upper)
+                return;
+
+            int swaps = 0;
+            int mid = lower + (upper-lower)/2;
+            int pivot = d[mid];
+            Console.WriteLine($"mid { mid } ");
+            // move items less than pivot to right and greater than to the left
+            int start = lower;
+            int stop = upper;
+            while(lower < upper)
+            {
+                while (d[lower] < pivot)
+                    lower++;
+                while (d[upper] > pivot)
+                    upper--;
+                if (lower < upper)
+                {
+                    swap(d, lower, upper);
+                    swaps++;
+                }
+            }
+
+            if (pivot < d[upper]) {
+                Console.WriteLine($"swap pivot { pivot }");
+                swap(d, mid, lower);
+                swaps++;
+            }
+
+            quickSortUtil(d, start, upper - 1); // left
+           
+            quickSortUtil(d, upper + 1, stop); // right
+
+            Console.WriteLine($"Swaps { swaps }");
+        }
+
+
+        private static void swap(int[] d, int lower, int upper)
+        {
+            int temp = d[lower];
+            d[lower] = d[upper];
+            d[upper] = temp;            
         }
     }
 }
