@@ -14,8 +14,34 @@ namespace ArraysAndStringsApril2021.Arrays
         // Print 'Too Chaotic' for any switch that is more than 2
         static void minimumBribes(int[] q)
         {
-            q.ToList().ForEach(Console.WriteLine);
+            //q.ToList().ForEach(Console.WriteLine);
             Console.WriteLine("Manage Array");
+            int size = q.Length;
+            int minimumBribes = 0;
+            bool isChaotic = false;
+            for(int x = 0; x < size; x++)
+            {
+                int positionDifference = q[x] - (x + 1);
+                if(positionDifference > 2)
+                {
+                    isChaotic = true;                    
+                    break;
+                }
+                else
+                {
+                    if(positionDifference > 0 && positionDifference <= 2)
+                    {
+                        minimumBribes++;
+                    }
+                }
+            }
+
+            if(isChaotic)
+                Console.WriteLine("Too Chaotic");
+            else
+                Console.WriteLine($"Minimum Bribes { minimumBribes }");
+
+
 
         }
     }
