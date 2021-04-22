@@ -15,10 +15,18 @@ namespace ArraysAndStringsApril2021
             //testFactorialAlg();
             // TestAlternateChars();
             //TestAnagramMaker();
-            testSpecialStrings();
+            //testSpecialStrings();
+            testNewYearMix();
 
         }
 
+
+        static void testNewYearMix()
+        {
+            int[] rideQueue = new int[] { 2, 1, 5, 3, 4 };            
+            NewYearMix.minimumBribes(rideQueue);
+
+        }
         static void testSpecialStrings()
         {
             // abcbaba 10 aaaa - 10

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArraysAndStringsApril2021.Arrays
+namespace ArraysAndStringsApril2021
 {
     public class NewYearMix
     {
@@ -12,7 +12,7 @@ namespace ArraysAndStringsApril2021.Arrays
         // Complete the minimumBribes function below.
         //Print minimum number of forward switches in the array
         // Print 'Too Chaotic' for any switch that is more than 2
-        static void minimumBribes(int[] q)
+        public static void minimumBribes(int[] q)
         {
             //q.ToList().ForEach(Console.WriteLine);
             Console.WriteLine("Manage Array");
@@ -31,7 +31,7 @@ namespace ArraysAndStringsApril2021.Arrays
                 {
                     if(positionDifference > 0 && positionDifference <= 2)
                     {
-                        minimumBribes++;
+                        minimumBribes += positionDifference;
                     }
                 }
             }
