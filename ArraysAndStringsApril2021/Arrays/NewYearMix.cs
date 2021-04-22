@@ -30,7 +30,7 @@ namespace ArraysAndStringsApril2021
                 }
                 else
                 {
-                    if(positionDifference > 0 && positionDifference <= 2)
+                    if(positionDifference >= 0 && positionDifference <= 2)
                     {
                         minimumBribes += positionDifference;
                     }
