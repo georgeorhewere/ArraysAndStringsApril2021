@@ -73,13 +73,19 @@ namespace ArraysAndStringsApril2021
         public static void minimumBribes3(int[] q)
         {
             int minimumBribes = 0;
-            var changedRides = q.Where(d => q[d-1] != d).ToArray();
-            int size = changedRides.Count();
+            int size = q.Length;
             bool isChaotic = false;
             for (int c = 0; c < size - 1; c++)
             {
-                var itemIndex = q.ToList().IndexOf(changedRides[c]);
-                var count = q.Skip(itemIndex + 1).Where(d => q[itemIndex] > d).Count();
+                int count = 0;
+                for(int d = c + 1; d < size; d++)
+                {
+                    if (q[d] < q[c])
+                        count++;
+                    if (count > 2)
+                        break;
+                }
+
                 if (count > 2)
                 {
                     isChaotic = true;
@@ -88,7 +94,7 @@ namespace ArraysAndStringsApril2021
                 else
                     minimumBribes += count;
             }
-           
+
             if (isChaotic)
                 Console.WriteLine($"Too chaotic");
             else
