@@ -25,15 +25,15 @@ namespace ArraysAndStringsApril2021
         {
             // result 3
             int[] rideQueue = new int[] { 2, 1, 5, 3, 4 };            
-            NewYearMix.minimumBribes3(rideQueue);
+            NewYearMix.minimumBribes4(rideQueue);
             Console.WriteLine();
             // result too chaotic
             rideQueue = new int[] { 2, 5, 1, 3, 4 };
-            NewYearMix.minimumBribes3(rideQueue);
+            NewYearMix.minimumBribes4(rideQueue);
 
             // failing test case expected 7
             rideQueue = new int[] { 1, 2, 5, 3, 7, 8, 6, 4 };
-            NewYearMix.minimumBribes3(rideQueue);
+            NewYearMix.minimumBribes4(rideQueue);
 
 
         }

@@ -101,6 +101,34 @@ namespace ArraysAndStringsApril2021
                 Console.WriteLine($"Minimum Bribes {minimumBribes}");
         }
 
+        public static void minimumBribes4(int[] q)
+        {
+            int minimumBribes = 0;
+            int size = q.Length;
+            bool isChaotic = false;
+            for (int x = 0; x < size; x++)
+            {
+                int positionDifference = q[x] - (x + 1);
+                if (positionDifference > 2)
+                {
+                    isChaotic = true;
+                    break;
+                }
+
+                int maxValue = Math.Max(0, q[x] - 2);
+           
+                //Count the number of people who are ahead of the current item in the queue.
+                // Note; reverse logic from counting those behind the current item
+                for (int j = maxValue; j < x; j++)
+                    if (q[j] > q[x])
+                        minimumBribes++;
+            }
+            if (isChaotic)
+                Console.WriteLine($"Too chaotic");
+            else
+                Console.WriteLine($"Minimum Bribes {minimumBribes}");
+        }
+
 
 
         //write quick sort to 
