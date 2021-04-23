@@ -54,15 +54,23 @@ namespace ArraysAndStringsApril2021
         {
             int minimumBribes = 0;
             int size = q.Length;
+            bool isChaotic = false;
             for(int c = 0; c < size - 1; c++)
             {
-                var span = q.AsSpan(c, size - c).ToArray().Where(d => q[c] > d);
+                var span = q.ToList().Skip(c + 1).Where(d => q[c] > d);
                 var count = span.Count();
-                minimumBribes += count;
+                if(count > 2)
+                {
+                    isChaotic = true;                    
+                    break;
+                }
+                else                
+                  minimumBribes += count;
             }
-
-            Console.WriteLine($"Minimum Bribes {minimumBribes}");
-
+            if(isChaotic)
+                Console.WriteLine($"Too chaotic");
+            else
+                Console.WriteLine($"Minimum Bribes {minimumBribes}");
         }
 
         //write quick sort to 
