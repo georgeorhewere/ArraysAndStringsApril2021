@@ -46,8 +46,6 @@ namespace ArraysAndStringsApril2021
             else
                 Console.WriteLine($"Minimum Bribes { minimumBribes }");
 
-
-
         }
 
         public static void minimumBribes2(int[] q)
@@ -57,8 +55,7 @@ namespace ArraysAndStringsApril2021
             bool isChaotic = false;
             for(int c = 0; c < size - 1; c++)
             {
-                var span = q.ToList().Skip(c + 1).Where(d => q[c] > d);
-                var count = span.Count();
+                var count = q.Skip(c + 1).Where(d => q[c] > d).Count();                
                 if(count > 2)
                 {
                     isChaotic = true;                    
@@ -72,6 +69,33 @@ namespace ArraysAndStringsApril2021
             else
                 Console.WriteLine($"Minimum Bribes {minimumBribes}");
         }
+
+        public static void minimumBribes3(int[] q)
+        {
+            int minimumBribes = 0;
+            var changedRides = q.Where(d => q[d-1] != d).ToArray();
+            int size = changedRides.Count();
+            bool isChaotic = false;
+            for (int c = 0; c < size - 1; c++)
+            {
+                var itemIndex = q.ToList().IndexOf(changedRides[c]);
+                var count = q.Skip(itemIndex + 1).Where(d => q[itemIndex] > d).Count();
+                if (count > 2)
+                {
+                    isChaotic = true;
+                    break;
+                }
+                else
+                    minimumBribes += count;
+            }
+           
+            if (isChaotic)
+                Console.WriteLine($"Too chaotic");
+            else
+                Console.WriteLine($"Minimum Bribes {minimumBribes}");
+        }
+
+
 
         //write quick sort to 
         public static void minimumBribesReverseSort(int[] q)
