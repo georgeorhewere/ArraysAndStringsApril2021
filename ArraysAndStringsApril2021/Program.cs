@@ -31,7 +31,7 @@ namespace ArraysAndStringsApril2021
 
             // failing test case expected 7
             rideQueue = new int[] { 1, 2, 5, 3, 7, 8, 6, 4 };
-            NewYearMix.minimumBribesReverseSort(rideQueue);
+            NewYearMix.minimumBribes2(rideQueue);
 
 
         }

@@ -52,17 +52,16 @@ namespace ArraysAndStringsApril2021
 
         public static void minimumBribes2(int[] q)
         {
-            int[] changedRides = q.Where(x => x != q[x-1
-                ]).ToArray();
-            int numOfChanged = 0;
-            foreach(int t in changedRides)
+            int minimumBribes = 0;
+            int size = q.Length;
+            for(int c = 0; c < size - 1; c++)
             {
-                int diff = t - q[t - 1];
-
-                if(diff > 0)                
-                    numOfChanged += diff;
+                var span = q.AsSpan(c, size - c).ToArray().Where(d => q[c] > d);
+                var count = span.Count();
+                minimumBribes += count;
             }
-            Console.WriteLine($"Minimum Bribes {numOfChanged}");
+
+            Console.WriteLine($"Minimum Bribes {minimumBribes}");
 
         }
 
@@ -94,6 +93,7 @@ namespace ArraysAndStringsApril2021
             {
                 while (d[lower] < pivot)
                     lower++;
+
                 while (d[upper] > pivot)
                     upper--;
                 if (lower < upper)
