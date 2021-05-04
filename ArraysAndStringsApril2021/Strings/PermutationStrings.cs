@@ -12,9 +12,44 @@ namespace ArraysAndStringsApril2021
 
         public static bool IsPermutation(string word1, string word2)
         {
+            if (word1.Length != word2.Length)
+                return false;
+            
+            Dictionary<char, int> charInstanceCount = new Dictionary<char, int>();
+            int count = word1.Length;
+            // go through each character to compare count instances for comparison
+            for(int x=0; x < count; x++)
+            {
+                char key = word1[x];
+                if (charInstanceCount.ContainsKey(key))
+                {
+                    charInstanceCount[key]++;
+                }
+                else
+                {
+                    charInstanceCount[key] = 1;
+                }
+            }
+
+            for(int y=0; y < count; y++)
+            {
+                char key = word2[y];
+                if (charInstanceCount.ContainsKey(key))
+                {
+                    charInstanceCount[key]--;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            foreach (var v in charInstanceCount.Values)
+                if (v != 0)
+                    return false;
 
 
-            return false;
+            return true;
         }
 
     }
