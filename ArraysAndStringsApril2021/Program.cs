@@ -26,10 +26,10 @@ namespace ArraysAndStringsApril2021
         static void TestPermutationStrings()
         {
             string[] test1 = { "george","baas","m","time wane" };
-            string[] test2 = { "egroeg","baan","m","mine tae" };
+            string[] test2 = { "egroeg","baan","m","mine tawe" };
             for(int x = 0; x < test1.Length; x++)
             {
-                var result = PermutationStrings.IsPermutation(test1[x], test2[x]);
+                var result = PermutationStrings.IsPermutation2(test1[x], test2[x]);
                 Console.WriteLine($"{test1[x]} is a permutation of {test2[x]}  : { result }");
             }
 
