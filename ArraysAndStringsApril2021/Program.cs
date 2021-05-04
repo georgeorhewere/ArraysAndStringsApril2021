@@ -25,8 +25,8 @@ namespace ArraysAndStringsApril2021
 
         static void TestPermutationStrings()
         {
-            string[] test1 = { "george","baas","m","time wane" };
-            string[] test2 = { "egroeg","baan","m","mine tawe" };
+            string[] test1 = { "george","baas","m","time wane","nyte","aaaaa","abcdefg" };
+            string[] test2 = { "egroeg","baan","m","mine tawe","etyn","bbbbb","ijklmon" };
             for(int x = 0; x < test1.Length; x++)
             {
                 var result = PermutationStrings.IsPermutation2(test1[x], test2[x]);

@@ -58,16 +58,18 @@ namespace ArraysAndStringsApril2021
                 return false;
 
             Dictionary<char, int> charInstanceCount = new Dictionary<char, int>();
-            int count = word1.Length;
+            int count = word1.Length;            
             // go through each character to compare count instances for comparison
             for (int x = 0; x < count; x++)
             {
                 char key = word1[x];
                 char key2 = word2[x];
-
                 if (charInstanceCount.ContainsKey(key))
                 {
-                    charInstanceCount.Remove(key);
+                    if(charInstanceCount[key] < 1)
+                        charInstanceCount[key]++;
+                    else
+                        charInstanceCount[key]--;
                 }
                 else
                 {
@@ -76,17 +78,17 @@ namespace ArraysAndStringsApril2021
 
                 if (charInstanceCount.ContainsKey(key2))
                 {
-                    charInstanceCount.Remove(key2);
+                    charInstanceCount[key2]--;
                 }
                 else
                 {
-                    charInstanceCount[key2]=1;
+                    charInstanceCount[key2] = 1;
                 }
             }
             
 
-            
-              if (charInstanceCount.Count() > 0)
+            foreach (var v in charInstanceCount.Values)
+                if (v != 0)
                     return false;
 
 
