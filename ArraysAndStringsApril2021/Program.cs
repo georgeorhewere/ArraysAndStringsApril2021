@@ -16,7 +16,8 @@ namespace ArraysAndStringsApril2021
             // TestAlternateChars();
             //TestAnagramMaker();
             //testSpecialStrings();
-            testNewYearMix();
+            //testNewYearMix();
+            TestPermutationStrings();
 
         }
 
