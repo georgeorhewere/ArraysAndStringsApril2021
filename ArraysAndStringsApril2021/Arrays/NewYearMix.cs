@@ -116,6 +116,8 @@ namespace ArraysAndStringsApril2021
                 }
 
                 int maxValue = Math.Max(0, q[x] - 2);
+                if(maxValue < x)
+                    Console.WriteLine($"Loop from {maxValue} to {x}");
            
                 //Count the number of people who are ahead of the current item in the queue.
                 // Note; reverse logic from counting those behind the current item

@@ -21,6 +21,18 @@ namespace ArraysAndStringsApril2021
         }
 
 
+
+        static void TestPermutationStrings()
+        {
+            string[] test1 = { "george" };
+            string[] test2 = { "egroeg" };
+            for(int x = 0; x < test1.Length; x++)
+            {
+                var result = PermutationStrings.IsPermutation(test1[x], test2[x]);
+                Console.WriteLine($"{test1[x]} is a permutation of {test2[x]}  : { result }");
+            }
+
+        }
         static void testNewYearMix()
         {
             // result 3
